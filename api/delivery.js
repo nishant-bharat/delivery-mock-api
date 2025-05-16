@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
     const { pincode = "" } = req.query;
 
     if (!pincode || pincode.length < 6) {
