@@ -20,10 +20,27 @@ module.exports = function handler(req, res) {
 
     const region = regionMap[prefix] || "Unknown";
     const deliveryDate = new Date();
-    const daysToAdd = prefix === "1" ? 2 : prefix === "4" ? 4 : 6;
+
+    const baseOffsetMap = {
+      "1": 2,
+      "2": 3,
+      "3": 1,
+      "4": 4,
+      "5": 2,
+      "6": 5,
+      "7": 3,
+      "8": 6
+    };
+
+    const baseOffset = baseOffsetMap[prefix] ?? 3;
+
+    const randomOffset = Math.floor(Math.random() * 5);
+
+    const daysToAdd = baseOffset + randomOffset;
+
     deliveryDate.setDate(deliveryDate.getDate() + daysToAdd);
 
-    const formattedDate = deliveryDate.toISOString().split("T")[0];
+    const formattedDate = deliveryDate.toISOString();
 
     return res.status(200).json({
         status: "success",
