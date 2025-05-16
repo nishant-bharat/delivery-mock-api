@@ -1,7 +1,7 @@
 module.exports = function handler(req, res) {
     const { pincode = "" } = req.query;
 
-    if (!pincode || pincode.length < 6) {
+    if (!pincode || pincode.length != 6) {
         return res.status(400).json({ error: "Invalid or missing pincode." });
     }
 
@@ -40,7 +40,7 @@ module.exports = function handler(req, res) {
 
     deliveryDate.setDate(deliveryDate.getDate() + daysToAdd);
 
-    const formattedDate = deliveryDate.toISOString();
+    const formattedDate = deliveryDate.toISOString().split("T")[0];
 
     return res.status(200).json({
         status: "success",
