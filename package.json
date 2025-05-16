@@ -1,0 +1,8 @@
+{
+  "name": "vercel-delivery-api",
+  "version": "1.0.0",
+  "main": "api/delivery.js",
+  "scripts": {
+    "start": "vercel dev"
+  }
+}
