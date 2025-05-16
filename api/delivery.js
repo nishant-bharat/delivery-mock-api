@@ -29,7 +29,7 @@ module.exports = function handler(req, res) {
         status: "success",
         requestId: "DELH-" + Math.random().toString(36).substring(2, 10),
         timestamp: new Date().toISOString(),
-        region: region
+        region: region,
         deliveryInfo: {
             pincode: pincode,
             estimate: {
