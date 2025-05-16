@@ -11,11 +11,11 @@ module.exports = function handler(req, res) {
         "2": "North",
         "3": "West",
         "4": "West",
-        "5": "South"
-        "6": "South"
-        "7": "East"
-        "8": "East"
-        "9": "APS"
+        "5": "South",
+        "6": "South",
+        "7": "East",
+        "8": "East",
+        "9": "APS",
     };
 
     const region = regionMap[prefix] || "Unknown";
