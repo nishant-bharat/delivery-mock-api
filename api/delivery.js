@@ -27,11 +27,9 @@ module.exports = function handler(req, res) {
 
     return res.status(200).json({
         status: "success",
-        metadata: {
-            requestId: "mock-" + Math.random().toString(36).substring(2, 10),
-            timestamp: new Date().toISOString(),
-            region: region
-        },
+        requestId: "DELH-" + Math.random().toString(36).substring(2, 10),
+        timestamp: new Date().toISOString(),
+        region: region
         deliveryInfo: {
             pincode: pincode,
             estimate: {
